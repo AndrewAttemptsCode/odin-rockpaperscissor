@@ -10,7 +10,7 @@
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     let computerChoice;
-
+    
     if (randomNumber === 1) {
         computerChoice = "Rock";
         console.log("Rock");
@@ -22,7 +22,6 @@ function getComputerChoice() {
         console.log("Scissors");
     }
     return computerChoice;
-
 }
 
 getComputerChoice();
