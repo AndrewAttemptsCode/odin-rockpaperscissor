@@ -13,13 +13,13 @@ function getComputerChoice() {
     
     if (randomNumber === 1) {
         computerChoice = "rock";
-        // alert("The computer picked, Rock.");
+        // console.log("The computer picked, Rock.");
     } else if (randomNumber === 2) {
         computerChoice = "paper";
-        // alert("The computer picked, Paper.");
+        // console.log("The computer picked, Paper.");
     } else if (randomNumber === 3) {
         computerChoice = "scissors";
-        // alert("The computer picked, Scissors.");
+        // console.log("The computer picked, Scissors.");
     }
     return computerChoice;
 }
