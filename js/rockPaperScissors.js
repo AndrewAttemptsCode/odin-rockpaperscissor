@@ -24,14 +24,10 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-// Two variables containing the moves for both player and computer.
-
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-
 // Function to play a single round of Rock, Paper Scissors.
 // Takes input from the variables.
 // Decides winner based on the move hierarchy.
+// Return correct round statement in the console.
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
@@ -56,4 +52,21 @@ function playRound(playerSelection, computerSelection) {
     return roundOutcome;
 }
 
-console.log(playRound(playerSelection, computerSelection));
+// Test the outcome of playRound
+// console.log(playRound(playerSelection, computerSelection));
+
+// Create function to play 5 rounds
+// Player select is static - place outside of the loop.
+// Player select is now dynamic, asks for a move.
+// Insert computer function into the loop to generate new move each time.
+// Insert playRound function to compare player and computer move to decide outcome.
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Enter a move (Rock, Paper or Scissors): ");
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+    }
+}
+
+playGame();
