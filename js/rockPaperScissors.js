@@ -35,14 +35,18 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nIT'S A DRAW!`);
 // Check all win conditions for the player.
+// Add 1 to player score.
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
+        playerScore++;
         alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU WIN!`)
 // If not a draw and not a player win, computer wins.
+// Add 1 to computer score.
     } else {
+        computerScore++;
         alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU LOSE.`);
     }
 }
@@ -55,13 +59,21 @@ function playRound(playerSelection, computerSelection) {
 // Player select is now dynamic, asks for a move.
 // Insert computer function into the loop to generate new move each time.
 // Insert playRound function to compare player and computer move to decide outcome.
-
-function playGame() {
-    for (let i = 0; i < 5; i++) {
+// Add score tracking
+// Add score reporting at the end of the 5 rounds.
+// Add flexability for rounds amount in the for loop call.
+function playGame(rounds) {
+    for (let i = 0; i < rounds; i++) {
         const playerSelection = prompt("Enter a move (Rock, Paper or Scissors): ");
         const computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
     }
+
+    let resultMessage = playerScore === computerScore ? "IT'S A DRAW" : playerScore > computerScore ? "YOU WIN!" : "YOU LOSE.";
+        alert(`FINAL SCORE\n\nYour score: ${playerScore}/${rounds}\nComputer score: ${computerScore}/${rounds}\n\n${resultMessage}`);
 }
 
-playGame();
+let playerScore = 0;
+let computerScore = 0;
+
+playGame(5);
