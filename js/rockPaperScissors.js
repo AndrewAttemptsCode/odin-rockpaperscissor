@@ -13,13 +13,13 @@ function getComputerChoice() {
     
     if (randomNumber === 1) {
         computerChoice = "rock";
-        console.log("Rock");
+        // alert("The computer picked, Rock.");
     } else if (randomNumber === 2) {
         computerChoice = "paper";
-        console.log("Paper");
+        // alert("The computer picked, Paper.");
     } else if (randomNumber === 3) {
         computerChoice = "scissors";
-        console.log("Scissors");
+        // alert("The computer picked, Scissors.");
     }
     return computerChoice;
 }
@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
 // If both selections are the same, it's a draw.
     if (playerSelection === computerSelection) {
         roundOutcome = "It's a draw.";
-        console.log("It's a draw.");
+        alert(`The computer picked, ${computerSelection}.\nIT'S A DRAW!`);
 // Check all win conditions for the player.
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -43,11 +43,11 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
         roundOutcome = "You win.";
-        console.log("You win.");
+        alert(`The computer picked, ${computerSelection}.\nYOU WIN!`)
 // If not a draw and not a player win, computer wins.
     } else {
         roundOutcome = "You lose.";
-        console.log("You lose.");
+        alert(`The computer picked, ${computerSelection}.\nYOU LOSE.`);
     }
     return roundOutcome;
 }
