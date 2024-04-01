@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
 // If both selections are the same, it's a draw.
     if (playerSelection === computerSelection) {
         roundOutcome = "It's a draw.";
-        alert(`The computer picked, ${computerSelection}.\nIT'S A DRAW!`);
+        alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nIT'S A DRAW!`);
 // Check all win conditions for the player.
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -43,11 +43,11 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
         roundOutcome = "You win.";
-        alert(`The computer picked, ${computerSelection}.\nYOU WIN!`)
+        alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU WIN!`)
 // If not a draw and not a player win, computer wins.
     } else {
         roundOutcome = "You lose.";
-        alert(`The computer picked, ${computerSelection}.\nYOU LOSE.`);
+        alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU LOSE.`);
     }
     return roundOutcome;
 }
