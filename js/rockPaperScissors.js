@@ -35,8 +35,10 @@ const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
+    let roundOutcome;
 // If both selections are the same, it's a draw.
     if (playerSelection === computerSelection) {
+        roundOutcome = "It's a draw.";
         console.log("It's a draw.");
 // Check all win conditions for the player.
     } else if (
@@ -44,11 +46,14 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
+        roundOutcome = "You win.";
         console.log("You win.");
 // If not a draw and not a player win, computer wins.
     } else {
+        roundOutcome = "You lose.";
         console.log("You lose.");
     }
+    return roundOutcome;
 }
 
 console.log(playRound(playerSelection, computerSelection));
