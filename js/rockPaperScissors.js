@@ -12,16 +12,43 @@ function getComputerChoice() {
     let computerChoice;
     
     if (randomNumber === 1) {
-        computerChoice = "Rock";
+        computerChoice = "rock";
         console.log("Rock");
     } else if (randomNumber === 2) {
-        computerChoice = "Paper";
+        computerChoice = "paper";
         console.log("Paper");
     } else if (randomNumber === 3) {
-        computerChoice = "Scissors";
+        computerChoice = "scissors";
         console.log("Scissors");
     }
     return computerChoice;
 }
 
-getComputerChoice();
+// Two variables containing the moves for both player and computer.
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+
+// Function to play a single round of Rock, Paper Scissors.
+// Takes input from the variables.
+// Decides winner based on the move hierarchy.
+
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+// If both selections are the same, it's a draw.
+    if (playerSelection === computerSelection) {
+        console.log("It's a draw.");
+// Check all win conditions for the player.
+    } else if (
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper")
+    ) {
+        console.log("You win.");
+// If not a draw and not a player win, computer wins.
+    } else {
+        console.log("You lose.");
+    }
+}
+
+console.log(playRound(playerSelection, computerSelection));
