@@ -31,10 +31,8 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    let roundOutcome;
 // If both selections are the same, it's a draw.
     if (playerSelection === computerSelection) {
-        roundOutcome = "It's a draw.";
         alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nIT'S A DRAW!`);
 // Check all win conditions for the player.
     } else if (
@@ -42,14 +40,11 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
-        roundOutcome = "You win.";
         alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU WIN!`)
 // If not a draw and not a player win, computer wins.
     } else {
-        roundOutcome = "You lose.";
         alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU LOSE.`);
     }
-    return roundOutcome;
 }
 
 // Test the outcome of playRound
