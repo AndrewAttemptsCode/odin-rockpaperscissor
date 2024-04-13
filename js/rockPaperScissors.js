@@ -15,9 +15,10 @@ function getComputerChoice() {
 function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
 
+    let resultMessage;
 // If both selections are the same, it's a draw.
     if (playerSelection === computerSelection) {
-        alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nIT'S A DRAW!`);
+        resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nIT'S A DRAW!`;
 // Check all win conditions for the player.
 // Add 1 to player score.
     } else if (
@@ -26,13 +27,15 @@ function playRound(playerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
         playerScore++;
-        alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU WIN!`)
+        resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU WIN!`;
 // If not a draw and not a player win, computer wins.
 // Add 1 to computer score.
     } else {
         computerScore++;
-        alert(`You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU LOSE.`);
+        resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU LOSE.`;
     }
+
+    results.textContent = resultMessage;
 }
 
 // function playGame(rounds) {
@@ -57,3 +60,6 @@ const buttonScissors = document.querySelector("#scissors");
 buttonRock.addEventListener("click", () => playRound("rock"));
 buttonPaper.addEventListener("click", () => playRound("paper"));
 buttonScissors.addEventListener("click", () => playRound("scissors"));
+
+const results = document.querySelector("div");
+
