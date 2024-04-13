@@ -37,6 +37,10 @@ function playRound(playerSelection) {
 
     results.textContent = resultMessage;
     scoreboard.textContent = `Player: ${playerScore}/5 Computer: ${computerScore}/5`;
+
+    if (playerScore === 5 || computerScore === 5) {
+        endGame();
+    }
 }
 
 // function playGame(rounds) {
@@ -49,10 +53,11 @@ function playRound(playerSelection) {
 //         alert(`FINAL SCORE\n\nYour score: ${playerScore}/${rounds}\nComputer score: ${computerScore}/${rounds}\n\n${resultMessage}`);
 // }
 
+
+
+
 let playerScore = 0;
 let computerScore = 0;
-
-// playGame(5);
 
 const buttonRock = document.querySelector("#rock");
 const buttonPaper = document.querySelector("#paper");
@@ -65,4 +70,6 @@ buttonPaper.addEventListener("click", () => playRound("paper"));
 buttonScissors.addEventListener("click", () => playRound("scissors"));
 
 
-
+function endGame() {
+    results.textContent = playerScore === 5 ? "You win the game" : "You lose the game.";
+}
