@@ -36,6 +36,7 @@ function playRound(playerSelection) {
     }
 
     results.textContent = resultMessage;
+    scoreboard.textContent = `Player: ${playerScore}/5 Computer: ${computerScore}/5`;
 }
 
 // function playGame(rounds) {
@@ -56,10 +57,12 @@ let computerScore = 0;
 const buttonRock = document.querySelector("#rock");
 const buttonPaper = document.querySelector("#paper");
 const buttonScissors = document.querySelector("#scissors");
+const results = document.querySelector("#results");
+const scoreboard = document.querySelector("#scoreboard");
 
 buttonRock.addEventListener("click", () => playRound("rock"));
 buttonPaper.addEventListener("click", () => playRound("paper"));
 buttonScissors.addEventListener("click", () => playRound("scissors"));
 
-const results = document.querySelector("div");
+
 
