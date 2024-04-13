@@ -1,3 +1,17 @@
+let playerScore = 0;
+let computerScore = 0;
+
+const buttonRock = document.querySelector("#rock");
+const buttonPaper = document.querySelector("#paper");
+const buttonScissors = document.querySelector("#scissors");
+const results = document.querySelector("#results");
+const scoreboard = document.querySelector("#scoreboard");
+
+buttonRock.addEventListener("click", () => playRound("rock"));
+buttonPaper.addEventListener("click", () => playRound("paper"));
+buttonScissors.addEventListener("click", () => playRound("scissors"));
+
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     let computerChoice;
@@ -12,15 +26,16 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+
 function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
-
     let resultMessage;
-// If both selections are the same, it's a draw.
+
+    // If both selections are the same, it's a draw.
     if (playerSelection === computerSelection) {
         resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nIT'S A DRAW!`;
-// Check all win conditions for the player.
-// Add 1 to player score.
+    // Check all win conditions for the player.
+    // Add 1 to player score.
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
@@ -28,8 +43,8 @@ function playRound(playerSelection) {
     ) {
         playerScore++;
         resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU WIN!`;
-// If not a draw and not a player win, computer wins.
-// Add 1 to computer score.
+    // If not a draw and not a player win, computer wins.
+    // Add 1 to computer score.
     } else {
         computerScore++;
         resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU LOSE.`;
@@ -42,32 +57,6 @@ function playRound(playerSelection) {
         endGame();
     }
 }
-
-// function playGame(rounds) {
-//     for (let i = 0; i < rounds; i++) {
-//         //const computerSelection = getComputerChoice();
-//         playRound(playerSelection, computerSelection);
-//     }
-
-//     let resultMessage = playerScore === computerScore ? "IT'S A DRAW" : playerScore > computerScore ? "YOU WIN!" : "YOU LOSE.";
-//         alert(`FINAL SCORE\n\nYour score: ${playerScore}/${rounds}\nComputer score: ${computerScore}/${rounds}\n\n${resultMessage}`);
-// }
-
-
-
-
-let playerScore = 0;
-let computerScore = 0;
-
-const buttonRock = document.querySelector("#rock");
-const buttonPaper = document.querySelector("#paper");
-const buttonScissors = document.querySelector("#scissors");
-const results = document.querySelector("#results");
-const scoreboard = document.querySelector("#scoreboard");
-
-buttonRock.addEventListener("click", () => playRound("rock"));
-buttonPaper.addEventListener("click", () => playRound("paper"));
-buttonScissors.addEventListener("click", () => playRound("scissors"));
 
 
 function endGame() {
