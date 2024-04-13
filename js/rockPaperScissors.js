@@ -13,17 +13,10 @@ buttonScissors.addEventListener("click", () => playRound("scissors"));
 
 
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3) + 1;
-    let computerChoice;
-    
-    if (randomNumber === 1) {
-        computerChoice = "rock";
-    } else if (randomNumber === 2) {
-        computerChoice = "paper";
-    } else if (randomNumber === 3) {
-        computerChoice = "scissors";
-    }
-    return computerChoice;
+    const randomNumber = Math.floor(Math.random() * 3);
+    const moveSelect = ["rock", "paper", "scissors"];
+
+    return moveSelect[randomNumber];
 }
 
 
