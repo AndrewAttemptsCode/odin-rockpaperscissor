@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    padding: 0 16px;
+    background: #1b263b;
+    border-bottom: 5px solid #415c8f;
+}
+
+.title-text {
+    color: #e0e1dd;
+}
