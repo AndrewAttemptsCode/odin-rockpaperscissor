@@ -33,3 +33,39 @@ body {
 .main {
     background: #0d1b2a;
 }
+
+.fight-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    border: 1px solid pink;
+}
+
+.playerName,
+.rivalName,
+.playerHealth,
+.rivalHealth {
+    color: #e0e1dd;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.playerHealth,
+.rivalHealth {
+    font-size: 16px;
+}
+
+.battle-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.battle-text {
+    color: #ee9b00;
+    font-size: 32px;
+}
