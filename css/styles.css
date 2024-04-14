@@ -46,7 +46,8 @@ body {
 .playerName,
 .rivalName,
 .playerHealth,
-.rivalHealth {
+.rivalHealth,
+.attack-text {
     color: #e0e1dd;
     font-size: 32px;
     font-weight: bold;
@@ -68,4 +69,34 @@ body {
 .battle-text {
     color: #ee9b00;
     font-size: 32px;
+}
+
+.move-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid greenyellow;
+}
+
+.request-attack {
+    color: #e9d8a6;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.attack-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+.attack-info img {
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+}
+.attack-info img:hover {
+    filter: brightness(150%);
+    cursor: pointer;
+    /* color: #415c8f; */
 }
