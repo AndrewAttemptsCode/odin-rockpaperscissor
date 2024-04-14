@@ -12,6 +12,8 @@ body {
     box-sizing: inherit;
 }
 
+/* Header Section */
+
 .header {
     display: flex;
     justify-content: center;
@@ -24,4 +26,10 @@ body {
 
 .title-text {
     color: #e0e1dd;
+}
+
+/* Body Section */
+
+.main {
+    background: #0d1b2a;
 }
