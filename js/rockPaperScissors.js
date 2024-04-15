@@ -36,7 +36,6 @@ function getComputerChoice() {
 
 function playRound(playerSelection) {
     if (playerScore === 0 || computerScore === 0) {
-        endGame();
         return;
     }
 
@@ -67,6 +66,10 @@ function playRound(playerSelection) {
     rivalHealth.textContent = `Health: ${computerScore}/5`;
     playerMove.src = `./images/${playerSelection}.png`;
     rivalMove.src = `./images/${computerSelection}.png`;
+
+    if (playerScore === 0 || computerScore === 0) {
+        endGame();
+    }
 
 }
 
