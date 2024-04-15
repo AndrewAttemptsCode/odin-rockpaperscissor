@@ -9,11 +9,22 @@ const playerHealth = document.querySelector(".playerHealth");
 const rivalHealth = document.querySelector(".rivalHealth");
 const playerMove = document.querySelector(".playerMove");
 const rivalMove = document.querySelector(".rivalMove");
+const buttonRestart = document.querySelector(".restartButton");
 
 buttonMelee.addEventListener("click", () => playRound("melee"));
 buttonMage.addEventListener("click", () => playRound("mage"));
 buttonRange.addEventListener("click", () => playRound("range"));
+buttonRestart.addEventListener("click", () => restartGame());
 
+function restartGame() {
+    playerScore = 5;
+    computerScore = 5;
+    playerMove.src = `./images/questionmark.png`;
+    rivalMove.src = `./images/questionmark.png`;
+    results.textContent = "Let the battle commence!";
+    playerHealth.textContent = "Health: 5/5";
+    rivalHealth.textContent = "Health: 5/5";
+}
 
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
