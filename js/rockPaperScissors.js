@@ -24,6 +24,11 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection) {
+    if (playerScore === 0 || computerScore === 0) {
+        endGame();
+        return;
+    }
+
     const computerSelection = getComputerChoice();
     let resultMessage;
 
@@ -52,11 +57,7 @@ function playRound(playerSelection) {
     playerMove.src = `./images/${playerSelection}.png`;
     rivalMove.src = `./images/${computerSelection}.png`;
 
-    if (playerScore === 0 || computerScore === 0) {
-        endGame();
-    }
 }
-
 
 function endGame() {
     results.textContent = computerScore === 0 ? "You win the fight!" : "You lost the fight!";
