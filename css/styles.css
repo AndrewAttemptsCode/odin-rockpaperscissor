@@ -17,9 +17,10 @@ body {
 .header,
 .footer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    height: 72px;
+    min-height: 72px;
     padding: 0 16px;
     background: #1b263b;
     border-bottom: 5px solid #415c8f;
@@ -90,6 +91,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
     border: 1px solid greenyellow;
 }
 
