@@ -14,7 +14,8 @@ body {
 
 /* Header Section */
 
-.header {
+.header,
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,6 +23,10 @@ body {
     padding: 0 16px;
     background: #1b263b;
     border-bottom: 5px solid #415c8f;
+}
+
+.footer {
+    border-top: 5px solid #415c8f;
 }
 
 .titleText {
