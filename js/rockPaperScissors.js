@@ -7,7 +7,8 @@ const buttonRange = document.querySelector("#range");
 const results = document.querySelector(".battleText");
 const playerHealth = document.querySelector(".playerHealth");
 const rivalHealth = document.querySelector(".rivalHealth");
-
+const playerMove = document.querySelector(".playerMove");
+const rivalMove = document.querySelector(".rivalMove");
 
 buttonMelee.addEventListener("click", () => playRound("melee"));
 buttonMage.addEventListener("click", () => playRound("mage"));
@@ -48,7 +49,8 @@ function playRound(playerSelection) {
     results.textContent = resultMessage.toUpperCase();
     playerHealth.textContent = `Health: ${playerScore}/5`;
     rivalHealth.textContent = `Health: ${computerScore}/5`;
-
+    playerMove.src = `./images/${playerSelection}.png`;
+    rivalMove.src = `./images/${computerSelection}.png`;
 
     if (playerScore === 0 || computerScore === 0) {
         endGame();
