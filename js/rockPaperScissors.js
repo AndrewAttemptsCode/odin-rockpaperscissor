@@ -5,7 +5,9 @@ const buttonMelee = document.querySelector("#melee");
 const buttonMage = document.querySelector("#mage");
 const buttonRange = document.querySelector("#range");
 const results = document.querySelector(".battleText");
-const scoreboard = document.querySelector("#scoreboard");
+const playerHealth = document.querySelector(".playerHealth");
+const rivalHealth = document.querySelector(".rivalHealth");
+
 
 buttonMelee.addEventListener("click", () => playRound("melee"));
 buttonMage.addEventListener("click", () => playRound("mage"));
@@ -44,14 +46,16 @@ function playRound(playerSelection) {
     }
 
     results.textContent = resultMessage.toUpperCase();
-    scoreboard.textContent = `Player: ${playerScore}/5 Computer: ${computerScore}/5`;
+    playerHealth.textContent = `Health: ${playerScore}/5`;
+    rivalHealth.textContent = `Health: ${computerScore}/5`;
 
-    if (playerScore === 5 || computerScore === 5) {
+
+    if (playerScore === 0 || computerScore === 0) {
         endGame();
     }
 }
 
 
 function endGame() {
-    results.textContent = playerScore === 5 ? "You win the game" : "You lose the game.";
+    results.textContent = computerScore === 0 ? "You win the fight!" : "You lost the fight!";
 }
