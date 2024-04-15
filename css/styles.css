@@ -57,7 +57,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
     gap: 3em;
 }
 
@@ -108,6 +108,7 @@ body {
     color: #e9d8a6;
     font-size: 18px;
     font-weight: bold;
+    margin-top: 50px;
 }
 
 .attackContainer {
