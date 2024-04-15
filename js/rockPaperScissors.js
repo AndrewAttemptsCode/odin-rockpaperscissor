@@ -1,20 +1,20 @@
-let playerScore = 0;
-let computerScore = 0;
+let playerScore = 5;
+let computerScore = 5;
 
-const buttonRock = document.querySelector("#rock");
-const buttonPaper = document.querySelector("#paper");
-const buttonScissors = document.querySelector("#scissors");
-const results = document.querySelector("#results");
+const buttonMelee = document.querySelector("#melee");
+const buttonMage = document.querySelector("#mage");
+const buttonRange = document.querySelector("#range");
+const results = document.querySelector(".battleText");
 const scoreboard = document.querySelector("#scoreboard");
 
-buttonRock.addEventListener("click", () => playRound("rock"));
-buttonPaper.addEventListener("click", () => playRound("paper"));
-buttonScissors.addEventListener("click", () => playRound("scissors"));
+buttonMelee.addEventListener("click", () => playRound("melee"));
+buttonMage.addEventListener("click", () => playRound("mage"));
+buttonRange.addEventListener("click", () => playRound("range"));
 
 
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
-    const moveSelect = ["rock", "paper", "scissors"];
+    const moveSelect = ["melee", "mage", "range"];
 
     return moveSelect[randomNumber];
 }
@@ -26,24 +26,24 @@ function playRound(playerSelection) {
 
     // If both selections are the same, it's a draw.
     if (playerSelection === computerSelection) {
-        resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nIT'S A DRAW!`;
+        resultMessage = `${playerSelection} TIES ${computerSelection}`;
     // Check all win conditions for the player.
-    // Add 1 to player score.
+    // Take 1 life from computer.
     } else if (
-        (playerSelection === "rock" && computerSelection === "scissors") ||
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper")
+        (playerSelection === "melee" && computerSelection === "range") ||
+        (playerSelection === "mage" && computerSelection === "melee") ||
+        (playerSelection === "range" && computerSelection === "mage")
     ) {
-        playerScore++;
-        resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU WIN!`;
+        computerScore--;
+        resultMessage = `${playerSelection} BEATS ${computerSelection}`;
     // If not a draw and not a player win, computer wins.
-    // Add 1 to computer score.
+    // Take 1 life from player.
     } else {
-        computerScore++;
-        resultMessage = `You picked, ${playerSelection}.\nThe computer picked, ${computerSelection}.\n\nYOU LOSE.`;
+        playerScore--;
+        resultMessage = `${computerSelection} BEATS ${playerSelection}`;
     }
 
-    results.textContent = resultMessage;
+    results.textContent = resultMessage.toUpperCase();
     scoreboard.textContent = `Player: ${playerScore}/5 Computer: ${computerScore}/5`;
 
     if (playerScore === 5 || computerScore === 5) {
