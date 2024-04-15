@@ -1,9 +1,15 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
     font-family: Roboto, sans-serif;
     box-sizing: border-box;
-    margin: 0;
+
 }
 
 *,
@@ -23,6 +29,9 @@ body {
     min-height: 72px;
     padding: 0 16px;
     background: #1b263b;
+}
+
+.header {
     border-bottom: 5px solid #415c8f;
 }
 
@@ -37,6 +46,9 @@ body {
 /* Body Section */
 
 .main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     background: #0d1b2a;
 }
 
