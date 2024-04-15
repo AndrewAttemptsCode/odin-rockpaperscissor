@@ -40,7 +40,13 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    gap: 3em;
     border: 1px solid pink;
+}
+
+.playerName,
+.rivalName {
+    margin-bottom: 10px;
 }
 
 .playerName,
@@ -57,6 +63,7 @@ body {
 .playerHealth,
 .rivalHealth {
     font-size: 16px;
+    margin-top: 10px;
 }
 
 .battleSection {
@@ -64,6 +71,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .battleText {
@@ -83,11 +92,13 @@ body {
     color: #e9d8a6;
     font-size: 18px;
     font-weight: bold;
+    border: 1px solid blue;
 }
 
 .attackContainer {
     display: flex;
     flex-direction: row;
+    border: 1px solid red;
     gap: 3em;
 }
 
